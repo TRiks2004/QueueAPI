@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  fastapi:
+    container_name: QueueAPI
+    build: .
+    command: uvicorn --factory Api.app:create_app --reload --host 0.0.0.0 --port 8000
+    restart: always
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
