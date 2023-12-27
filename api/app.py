@@ -12,5 +12,5 @@ def create_app():
     )
 
     return app
-
+# source ~/.bashrc 
 # docker compose -f api.yaml up -d
