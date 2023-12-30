@@ -8,7 +8,7 @@ from models.models import Base
 from services import routers 
 
 def create_app():
-    
+    # Тест
     Base.metadata.create_all(bind=engine)
 
     app = FastAPI(
@@ -28,6 +28,7 @@ def create_app():
     )
 
     return app
+
 # source ~/.bashrc 
 # docker compose -f api.yaml up -d
 
