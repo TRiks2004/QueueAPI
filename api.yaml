@@ -10,3 +10,18 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    container_name: Queue_DB
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: queue
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
